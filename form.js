@@ -1,5 +1,4 @@
-function checkNombre() {
-    var nombre = document.getElementById("nombre").value;
+function checkNombre(nombre) {
     var regex = new RegExp(/^[A-Za-z\_\-\.\s\xF1\xD1]+$/);
     if (nombre === "") {
         alert("El campo nombre está vacio");
