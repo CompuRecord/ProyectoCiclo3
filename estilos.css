@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.registro {
+    display: inline-block;
+    width: 50%;
+}
+
+.formulario {
+    align-items: center;
+    width: 30%;
+    display: inline-block;
+}
+
+.input {
+    width: 50%;
+}
+
+#cabezote {
+    background-color: rgb(185, 182, 182);
+    height: 50px;
+}
+
+.txtcabezote {
+    padding-top: 1%;
+    padding-left: 40%;
+    font-weight: 900;
+    font-size: 24px;
+}
+
+#bodylanding {
+    padding-top: 10%;
+    padding-left: 20%;
+}
