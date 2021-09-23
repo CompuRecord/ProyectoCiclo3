@@ -29,5 +29,16 @@ function checkApellido(Apellido) {
 
     };
 
+function checkCorreo(valor){
+            var email = document.getElementById('Correo').valor;
+            if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
+                alert("La dirección de email " + valor + " es correcta!.");
+                return true;
+                } else {
+                    alert("La dirección de email " + valor +" es incorrecta!.");
+                    return false;
+                    }
+        }
+
 }
-module.exports = { checkNombre, checkApellido }
+module.exports = { checkNombre, checkApellido, checkCorreo}
