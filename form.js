@@ -41,4 +41,21 @@ function checkCorreo(valor){
         }
 
 }
-module.exports = { checkNombre, checkApellido, checkCorreo}
+
+function checkContrasena(valor){
+    var lim =/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{8,}$/;
+    if(valor.length<8){//longitud
+        alert("Debe tener por lo menos 8 caracteres")
+        return false;
+    }
+    else if( (valor == null) || (/^\s+$/.test(password1))) {//null o espacios en blanco
+        alert("No debe contener espacios");
+        return false;
+      }
+    else if(!lim.test(valor)){//valida contraseñas de al menos una letra, al menos un numero, al menos una letra mayúscula, al menos 8 caracteres
+        alert("Debe contener al menos un numero, una letra mayúscula y una letra minúscula");
+        return false;
+    }
+    return true;
+}
+module.exports = { checkNombre, checkApellido, checkCorreo, checkContrasena}
