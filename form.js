@@ -58,4 +58,20 @@ function checkContrasena(valor){
     }
     return true;
 }
-module.exports = { checkNombre, checkApellido, checkCorreo, checkContrasena}
+
+function checkTelefono(valor){
+    var regex =new RegExp('^[0-9]{7}$') ;
+    
+    if ((regex.test(valor)) ){
+        alert("El telefono es correcto")
+        return true;
+    }
+    else{
+        alert("El telefono NO es correcto")
+        return false;
+    }
+
+   }
+module.exports = { checkNombre, checkApellido, checkCorreo, checkContrasena, checkTelefono}
+
+
