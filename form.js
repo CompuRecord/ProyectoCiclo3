@@ -1,48 +1,64 @@
-function checkNombre(nombre) {
+function checkNombre() {
     var regex = new RegExp(/^[A-Za-z\_\-\.\s\xF1\xD1]+$/);
-    if (nombre === "") {
+    valor=document.getElementById("nombre").value;
+    if (valor === "") {
         alert("El campo nombre está vacio");
         return false;
-    } else if (nombre.length < 4 || nombre.length > 30) {
+    } else if (valor.length < 4 || valor.length > 30) {
         alert("El nombre debe tener entre 4 y 30 caracteres");
         return false;
-    } else if (!regex.test(nombre)) {
+    } else if (!regex.test(valor)) {
         alert("El nombre no acepta caracteres númericos");
         return false;
     }
+    return true;
 }
 
-function checkApellido(Apellido) {
+function checkApellido() {
+    valor =document.getElementById("apellido")
     var regex = new RegExp('[a-z]{4,30}');
-    if (regex.test(apell.value)) {
+    if (regex.test(valor.value)) {
         alert("El apellido se ingreso correctamente")
         return true;
 
-    } else if (apell === "") {
+    } else if (valor === "") {
         alert("El apellido no se ingreso correctamente")
         return false;
 
     } else {
         alert("El apellido no se ingreso correctamente")
-        return fales;
-
-
-    };
-
-function checkCorreo(valor){
-            var email = document.getElementById('Correo').valor;
-            if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
-                alert("La dirección de email " + valor + " es correcta!.");
-                return true;
-                } else {
-                    alert("La dirección de email " + valor +" es incorrecta!.");
-                    return false;
-                    }
-        }
-
+        return false;
+    }
 }
 
-function checkContrasena(valor){
+function checkTelefono(){
+    valor=document.getElementById("telefono").value;
+    var regex =/^([0-9]+){7}$/ ;
+    
+    if ((regex.test(valor)) ){
+        //alert("El telefono es correcto")
+        return true;
+    }
+    else{
+        alert("El telefono NO es correcto")
+        return false;
+    }
+
+   }
+
+function checkCorreo(){
+    var valor = document.getElementById('correo').value;
+    if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(valor)){
+        alert("La dirección de email " + valor + " es correcta!.");
+        return true;
+        } else {
+            alert("La dirección de email " + valor +" es incorrecta!.");
+            return false;
+            }
+}
+
+function checkContrasena(){
+    valor =document.getElementById("contraseña")
     var lim =/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{8,}$/;
     if(valor.length<8){//longitud
         alert("Debe tener por lo menos 8 caracteres")
@@ -58,20 +74,10 @@ function checkContrasena(valor){
     }
     return true;
 }
-
-function checkTelefono(valor){
-    var regex =new RegExp('^[0-9]{7}$') ;
-    
-    if ((regex.test(valor)) ){
-        alert("El telefono es correcto")
-        return true;
-    }
-    else{
-        alert("El telefono NO es correcto")
-        return false;
-    }
-
-   }
-module.exports = { checkNombre, checkApellido, checkCorreo, checkContrasena, checkTelefono}
-
-
+module.exports = { 
+    checkNombre, 
+    checkApellido, 
+    checkTelefono,
+    checkCorreo,
+    checkContrasena
+                    };

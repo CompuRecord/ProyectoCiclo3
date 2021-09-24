@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "mysql": "^2.18.1"
+  },
+  "name": "proyectociclo3",
+  "version": "1.0.0",
+  "main": "form.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CompuRecord/ProyectoCiclo3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CompuRecord/ProyectoCiclo3/issues"
+  },
+  "homepage": "https://github.com/CompuRecord/ProyectoCiclo3#readme",
+  "description": ""
+}
