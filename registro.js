@@ -1,6 +1,8 @@
 function agregarRegistro(){};
 
+
 function ordenarArreglo(arreglo){};
+
 
 function filtrarCorreo(arreglo){};
 
