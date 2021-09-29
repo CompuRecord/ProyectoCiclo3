@@ -58,7 +58,7 @@ function checkCorreo(){
 }
 
 function checkContrasena(){
-    valor =document.getElementById("contraseña")
+    valor =document.getElementById("contrasena")
     var lim =/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])\w{8,}$/;
     if(valor.length<8){//longitud
         alert("Debe tener por lo menos 8 caracteres")
