@@ -1,24 +1,46 @@
 registros = [];
 
-function agregarRegistro() {
-    let entradas = document.getElementsByClassName("input");
-    // for (var e = 0; e < 10; e++) {   
-    datos = [];
-    for (var i = 0; i < entradas.length; i++) {
+function agregarRegistro(){
+    //if(document.getElementById("form-registro").onsubmit==true){//
+        //let inpu = document.getElementsByClassName ("input");
+    arrayGuardar = {}; //objeto
+    //asignamos los inputs a cada propiedad del objeto
+    arrayGuardar.nombre =document.getElementById("nombre").value;
+    arrayGuardar.apellido=document.getElementById("apellido").value;
+    arrayGuardar.telefono=document.getElementById("telefono").value;
+    arrayGuardar.correo=document.getElementById("correo").value;
+    arrayGuardar.contraseña=document.getElementById("contrasena").value;
+    //arrayGlobal.push(arrayGuardar);//asignamos objetos con sus propiedades al array
+    registros.push(arrayGuardar);
+    //}
+    //else return;
+}
 
-        datos.push(entradas[i].value);
+// function agregarRegistro() {
+//     registros.push(nuevoSujeto);
+//     console.log(registros);
+//     var getData = function() {
+//         function Persona(nombre, apellido, telefono, correo, contraseña) {
+//             this.nombre = nombre;
+//             this.apellido = apellido;
+//             this.telefono = telefono;
+//             this.correo = correo;
+//             this.contraseña = contraseña;
+//         }
 
-        //console.log (entradas[i].value);     
-    }
-    registros.push(datos);
-    //}  
-
-    // limpiarFormulario(); 
-    console.log(registros)
-};
+//         var nombreCapturar = document.getElementById("nombre").value;
+//         var apellidoCapturar = document.getElementById("apellido").value;
+//         var telefonoCapturar = document.getElementById("telefono").value;
+//         var correoCapturar = document.getElementById("correo").value;
+//         var contraseñaCapturar = document.getElementById("contrasena").value;
+//         nuevoSujeto = new Persona(nombreCapturar, apellidoCapturar, telefonoCapturar, correoCapturar, contraseñaCapturar);
+//         console.log(nuevoSujeto);
+//         agregar();
+//     }
+// };
 
 function ordenarArreglo(arreglo) {
-    arreglo.sort((x, y) => {
+    var arreglo = registros.sort((x, y) => {
         const apellidox = x.apellido.toLowerCase();
         const apellidoy = y.apellido.toLowerCase();
         if (apellidox < apellidoy) {
@@ -30,6 +52,7 @@ function ordenarArreglo(arreglo) {
         return 0;
     });
     console.log(arreglo);
+    return arreglo; 
 };
 
 
