@@ -56,7 +56,19 @@ function ordenarArreglo(arreglo) {
 };
 
 
-function filtrarCorreo(arreglo) {};
+function filtrarCorreo(arreglo) {
+    condicion=/^[^@ \t\r\n]+@gmail+\.[^@ \t\r\n]+/;
+    arreglo=registros;
+    arreglo_filtrado=[];
+    arreglo.forEach(i => {
+        if(condicion.test(i.correo)){
+            arreglo_filtrado.push(i);
+        }
+
+    });
+    print(arreglo_filtrado)
+    return arreglo_filtrado;
+};
 
 module.exports = {
     agregarRegistro,
