@@ -1,1 +1,1 @@
-SELECT correo FROM `Usuarios` WHERE correo LIKE "%gmail.com%";
+SELECT * FROM `Usuarios` WHERE correo LIKE "%gmail.com%";
