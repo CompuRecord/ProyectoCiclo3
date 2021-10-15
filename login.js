@@ -1,19 +1,36 @@
-let registros = [];
+let registros = [{ correo: "juan@gmail.com", contrasena: "SecurePassword123" }];
 
 function login() {
-    valorEmail = document.getElementById("correo");
-    valorContrasena = document.getElementById("contrasena");
+    var correo = document.getElementById("correo");
+    var contrasena = document.getElementById("contrasena");
 
-    registros.forEach(element => {
-        //alert(element.correo);
-        // alert(valorEmail.value);
-        if ((valorEmail.value === element.correo) || (valorContrasena.value === element.contraseña)) { //longitud
-            //alert("El usuario es válido");
-            validarCAPTCHA();
-            return true;
+    const correoIn = correo.value;
+    const contrasenaIn = contrasena.value;
+    const captchaIn = captcha.value;
+
+    for (var i = 0; i < registros.length; i++) {
+        const correoDb = registros[i].correo;
+        const contrasenaDb = registros[i].contrasena;
+        if (correoIn.length == 0) {
+            console.log("correo vacio o no existe");
+            return false;
+        } else {
+            if (correoIn == correoDb) {
+                if (contrasenaIn == contrasenaDb) {
+                    if (validarCAPTCHA(captchaIn) == true) {
+                        console.log("Acceso correcto a " + correoIn);
+                        return true;
+                    } else {
+                        console.log("Acceso denegado, captcha incorrecto");
+                        return false;
+                    }
+                } else {
+                    console.log("Acceso denegado, clave incorrecta");
+                    return false;
+                }
+            }
         }
-        return false;
-    });
+    }
 }
 
 function agregarRegistro() {
